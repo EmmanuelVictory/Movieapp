@@ -673,7 +673,7 @@ const auth = firebase.auth();
 // 🔹 Get button text element
 const authBtnText = document.getElementById("authBtnText");
 
-// 🔹 Toggle Sign In / Sign Out
+// 🔹 Toggle Sign In/Sign Out
 function toggleAuth() {
   if (auth.currentUser) {
     auth.signOut();
