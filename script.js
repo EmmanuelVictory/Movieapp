@@ -656,7 +656,7 @@ function submitReview(e) {
     showDetail(currentMovieId);
 }
 
-// 🔹 Initialize Firebase (replace placeholders with your own config!)
+// 🔹 Initialize FirebaseI(replace placeholders with your own config!)
 const firebaseConfig = {
   apiKey: "AIzaSyAdRV5dzDh2KYkOa92wSpvp6quxXJ9w7N8",
   authDomain: "movieapp-app.firebaseapp.com",
