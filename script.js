@@ -656,3 +656,39 @@ function submitReview(e) {
     showDetail(currentMovieId);
 }
 
+// 🔹 Initialize Firebase (replace placeholders with your own config!)
+const firebaseConfig = {
+  apiKey: "AIzaSyAdRV5dzDh2KYkOa92wSpvp6quxXJ9w7N8",
+  authDomain: "movieapp-app.firebaseapp.com",
+  projectId: "movieapp-app",
+  storageBucket: "movieapp-app.firebasestorage.app",
+  messagingSenderId: "136059306726",
+  appId: "1:136059306726:web:2350a8fbf6b4be7d227127"
+};
+firebase.initializeApp(firebaseConfig);
+
+// 🔹 Auth reference
+const auth = firebase.auth();
+ 
+// 🔹 Get button text element
+const authBtnText = document.getElementById("authBtnText");
+
+// 🔹 Toggle Sign In / Sign Out
+function toggleAuth() {
+  if (auth.currentUser) {
+    auth.signOut();
+  } else {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithPopup(provider).catch(err => console.error(err));
+  }
+}
+
+// 🔹 Updated button text automatically
+auth.onAuthStateChanged(user => {
+  if (user) {
+    authBtnText.textContent = `Sign Out (${user.displayName})`;
+    console.log("Signed in as:", user.displayName, user.email);
+  } else {
+    authBtnText.textContent = "Sign In";
+  }
+});
