@@ -80,3 +80,7 @@ Displaying many items at once forced me to think more carefully about layout and
 ## 🏆 Why This Project Matters to Me
 
 This project strengthened my API handling skills and helped me think more like an application developer rather than just a layout designer.
+
+## 📎 Live Demo
+
+[https://movieapp-six-xi.vercel.app/]
